@@ -1,8 +1,10 @@
-def hcf(m, n):
-    if(n==0):
-        return m
+def hcf(a, b):
+    if(a < b):
+        (a, b) = (b, a)
+    if(a%b == 0):
+        return b
     else:
-        return hcf(n, m%n)
+        return hcf(b, a%b)
 n = int(input("n : "))
 m = int(input("m : "))
 print(str(hcf(n, m)))
