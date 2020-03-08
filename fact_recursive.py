@@ -4,4 +4,7 @@ def fact(a):
     return a*fact((a-1))
 
 n = int(input("Enter the number to find the factorial of : "))
+if n<0:
+    print("Invalid input!")
+    exit()
 print("Factorial of "+str(n)+" is "+str(fact(n)))
