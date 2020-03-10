@@ -1,34 +1,35 @@
-out_graphs = {"a":["b", "f"], "b":["f", "e", "c"], "c":["d"], "d":[], "e":["c", "d", "f"], "f":[]}
-def enqueue(list1, rear, ele):
-    
-    list1[rear]=ele
-    rear = rear+1
-    return
-def dequeue(list1, front, rear):
-    if front<rear:
-        return list1[front]
-        front = front+1
-    return -9999
-def check1(out_graph_dict, source, dest):
-    queue1 = []
-    visited = []
-    front, rear = 0, 0
-    enqueue(queue1, rear, source)
-    visited.append(source)
-    
-    while (dest not in visited) and (front<rear):
-        curr = dequeue(queue1, front, rear)
-        if curr == -9999:
-            print("Not possible to reach destination")
-            return False
-        visited.extend(out_graph_dict[curr])
-        for i in out_graph_dict[curr]:
-            enqueue(queue1, rear, i)
-    
-    return True
-source = "a"
-dest = "d"
-if(check1(out_graphs, source, dest)):
-    print("Possible!")
+"""
+out_graphs = {"a":["b", "f"], "b":["f", "e", "c"], "c":["d"], "d":[], "e":["c", "d", "f"], "f":["a"]}
+Suppose the adjacency list of a digraph is as given above
+Input should be
+6
+b f
+f e c
+d
+
+c d f
+a
+b   -> The source
+"""
+import string
+def check1(adja_list, source):
+    queue1 = [source]
+    visited = [source]
+    while len(queue1) > 0:
+        curr = queue1.pop()
+        for i in adja_list[curr]:
+            if i not in visited:
+                visited.append(i)
+                queue1.append(i)    
+    return visited
+n = int(input("Enter the number of vertices : "))
+out_graphs1 = {}
+for i in list(string.ascii_lowercase)[0:n]:
+    print("Enter the nodes directed by node "+i, end=": ")
+    out_graphs1[i] = [j for j in input().split()]
+source = input("Enter the source node : ")
+final = check1(out_graphs1, source)
+if(final != []):
+    print(final)
 else:
-    print("Not Possible!")
+    print("No nodes are accessible!")
