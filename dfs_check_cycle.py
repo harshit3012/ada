@@ -38,8 +38,7 @@ class fin_graph():
             if ivisited[node]: 
                 if self.isCyclicUtil(node,visited,recStack) == True: 
                     return True
-        return False
-  
+        return False 
 g = fin_graph(6) 
 g.addEdge(0, 4) 
 g.addEdge(0, 2) 
