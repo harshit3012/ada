@@ -1,16 +1,15 @@
-"""
-out_graphs = {"a":["b", "f"], "b":["f", "e", "c"], "c":["d"], "d":[], "e":["c", "d", "f"], "f":["a"]}
-Suppose the adjacency list of a digraph is as given above
-Input should be
-6
-b f
-f e c
-d
+#out_graphs = {"a":["b", "f"], "b":["f", "e", "c"], "c":["d"], "d":[], "e":["c", "d", "f"], "f":["a"]}
+#Suppose the adjacency list of a digraph is as given above
+#Input should be
+#6
+#b f
+#f e c
+#d
+#
+#c d f
+#a
+#b   -> The source
 
-c d f
-a
-b   -> The source
-"""
 import string
 def check1(adja_list, source):
     queue1 = [source]
@@ -22,7 +21,7 @@ def check1(adja_list, source):
                 visited.append(i)
                 queue1.append(i)    
     return visited
-n = int(input("Enter the number of vertices : "))
+n = int(input("Enter the number of nodes : "))
 out_graphs1 = {}
 for i in list(string.ascii_lowercase)[0:n]:
     print("Enter the nodes directed by node "+i, end=": ")
