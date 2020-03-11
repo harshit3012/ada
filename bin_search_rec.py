@@ -3,8 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 from sklearn import linear_model as lr
-#from numpy import polyfit
-
 
 def recBinSearch(arr, ele, high, low):
     if low > high:
@@ -21,7 +19,6 @@ def recBinSearch(arr, ele, high, low):
         low = mid + 1
 
     recBinSearch(arr, ele, high, low)
-
 
 ranges = 10
 yplot = []
