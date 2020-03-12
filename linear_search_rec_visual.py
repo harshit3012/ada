@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import time
 from sklearn import linear_model as lr
 
-
 def recursiveLinearSearch(arr, ele, i):
     if i == len(arr):
         # print("Element not found")
@@ -15,8 +14,6 @@ def recursiveLinearSearch(arr, ele, i):
         return
     else:
         return recursiveLinearSearch(arr, ele, i+1)
-
-
 ranges = 10
 yplot = []
 xplot = []
