@@ -6,11 +6,9 @@ def median1(arr1):
     else:
         return arr1[len(arr1)//2]
 
-
 def findMedian(arr1, arr2):
     n = len(arr1)
     m = n // 2
-
     if not n:
         return -1
     elif n == 1:
@@ -30,7 +28,6 @@ def findMedian(arr1, arr2):
                 return findMedian(arr2[:m + 1], arr1[m - 1:])
             else:
                 return findMedian(arr2[:m + 1], arr1[m:])
-
 
 print("Enter arr1: ", end="")
 arr1 = [int(i) for i in input("").split()]
