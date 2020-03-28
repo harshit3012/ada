@@ -13,7 +13,7 @@ n = len(arr)
 fibs = generateFib(n)
 
 jumps = [n] * (n + 1)
-arr += [1]
+arr.append(1)
 for i in range(n + 1):
     if arr[i] == 1:
         for fib in fibs:
