@@ -9,7 +9,6 @@ def count1(num):
     else:
         return False
 
-
 def sumOfDigits(n):
     sum1 = 0
     while (n != 0):
@@ -18,11 +17,10 @@ def sumOfDigits(n):
 
     return sum1
 
-
 arr = [int(i) for i in input("Enter the array : ").split()]
 n = len(arr)
 total = 0
 for i in range(n):
-    if (count1(arr[i])):
+    if count1(arr[i]):
         total += sumOfDigits(arr[i])
 print(total)
