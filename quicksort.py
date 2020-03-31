@@ -1,3 +1,4 @@
+import time
 def partition(arr, lo, high):
     i = (lo-1)
     pivot = arr[high]
@@ -10,16 +11,17 @@ def partition(arr, lo, high):
     arr[i+1], arr[high] = arr[high], arr[i+1]
     return (i+1)
 
-
 def quickSort(arr, lo, high):
     if lo < high:
         pi = partition(arr, lo, high)
         quickSort(arr, lo, pi-1)
         quickSort(arr, pi+1, high)
 
-
 arr = [int(i) for i in input("").split()]
 n = len(arr)
+start = time.time()
 quickSort(arr, 0, n-1)
+end = time.time()
 print("Sorted array is: ", end="")
 print(arr)
+print("Time taken : " + str(end-start))
