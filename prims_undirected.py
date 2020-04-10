@@ -1,6 +1,6 @@
 n_vertices = int(input("Enter number of vertices: "))
 edges = int(input("Enter number of edges: "))
-dict_graph = {}
+dict_graph = {} 
 print("Enter edges in the form [vertice_start] [end] [weight]: ")
 for i in range(edges):
     start, end, weight = [int(x) for x in input().split()]
