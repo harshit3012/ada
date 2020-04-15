@@ -1,11 +1,11 @@
 def kruskals(graph):
     graph.sort(key=lambda e: e[2])
-    included = set()
+    set_included = set()
     for edge in graph:
-        if edge[0] not in included or edge[1] not in included:
+        if edge[0] not in set_included or edge[1] not in set_included:
             print(edge[0], '->', edge[1], '=', edge[2])
-            included.add(edge[0])
-            included.add(edge[1])
+            set_included.add(edge[0])
+            set_included.add(edge[1])
 
 
 edges = int(input("Enter number of edges: "))
