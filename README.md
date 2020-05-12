@@ -42,7 +42,7 @@
 * [Finding Factorial of a given number](../master/fact_recursive.py)
 * [Finding nth Fibonacci number](../master/fib_recursive.py)
 		
-..* [Bubble sort and time taken](../master/bubsort.py)
+* [Bubble sort and time taken](../master/bubsort.py)
 
 ###### 13 Feb P2
 * [Find an element in the rotated array in O(log n) time](../master/pivoted_binary_search.py)
